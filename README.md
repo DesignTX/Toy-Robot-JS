@@ -42,7 +42,8 @@ In order to input commands, go into commandList.txt.
 
 Inputs for movement will be implemented as an array.
 robot must be 'PLACE'd first in order for the robot to take in valid commands,
-eg; PLACE 4,3,NORTH
+eg; PLACE 4, 3, NORTH
+(X and Y can not be greater than 4, otherwise the command will be ignored.)
 
 
 **[Available Commands](#commands)**
