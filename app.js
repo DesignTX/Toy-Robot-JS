@@ -2,7 +2,7 @@ const fs = require('fs');
 const WorldController = require('./worldController')
 
 
-const fileData = fs.readFileSync('./place.txt', 'utf8');
+const fileData = fs.readFileSync('./commandList.txt', 'utf8');
 
 const worldController = new WorldController();
 

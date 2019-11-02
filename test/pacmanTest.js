@@ -4,7 +4,6 @@ const Pacman = require('../pacman');
 describe("Pacman Class",() => {
   beforeEach(() => {
     testPacman = new Pacman();
-    // testPacman.place(0,0,'north');
   });
 
   describe("#place()", () => {
