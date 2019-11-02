@@ -1,16 +1,14 @@
 const fs = require('fs');
-const Pacman = require('./pacman')
+const WorldController = require('./worldController')
+
 
 const fileData = fs.readFileSync('./place.txt', 'utf8');
+
+const worldController = new WorldController();
 
 //turns fileData into an array
 const instructions = fileData.split('\n');
 //turns all commands into lowercase to match function names
 const commands = instructions.map((instruction) => {return instruction.toLowerCase()});
 
-const pacman = new Pacman(1,2,"west");
-
-//loops through commands and passes command to pacman object
-commands.forEach(command => {
-  pacman.execute(command.split(/[ ,]+/));
-});
+worldController.processCommands(commands);

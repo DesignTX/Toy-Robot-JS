@@ -1,46 +1,53 @@
 class Pacman {
-  constructor(x,y,facing) {
+  constructor() {
     this.directions = ['north','east','south','west'];
-    this.x = x;
-    this.y = y;
-    this.facingIndex = this.directions.indexOf(facing);
+    // isPlaced set to false so pacman can not move without being placed
+    this.isPlaced = false;
   }
   execute(command){
     //checking to see if pacman can call the command
-    if(this[command[0]]){
+    if(this[command[0]]) {
       //calling command on pacman object with optional function arguments
-      this[command[0]].apply(this, command.slice(1,command.length));
+      // if pacman is placed then take in the remaining commands afterwards
+      if(command[0] === 'place' || this.isPlaced){
+        this[command[0]].apply(this, command.slice(1,command.length));
+      }
     }
   }
   report(){
-    console.log(`\nPacman's coordinates: x = ${this.x}, y = ${this.y}, facing = ${this.directions[this.facingIndex]}\n`) 
+    console.log(`PACMAN'S COORDINATES: X = ${this.x}, Y = ${this.y}, FACING = ${this.directions[this.facingIndex].toUpperCase()}`) 
   }
   place(x,y,facing){
-    console.log('Place called')
     //parseInt converts string into integer
     this.x = parseInt(x);
     this.y = parseInt(y);
     this.facingIndex = this.directions.indexOf(facing);
+    this.isPlaced = true;
   }
+
+  //pacman left turn
   left(){
-    console.log("left called")
     this.facingIndex == 0 ? this.facingIndex = 3 : this.facingIndex -= 1;
   }
+
+  //pacman right turn
   right(){
-    console.log("right called")
     this.facingIndex == 3 ? this.facingIndex = 0 : this.facingIndex += 1;
   }
+
+  //pacman moves forward in facing direction
   move(){
-    console.log(`Move called ... ${this.facingIndex % 2}`)
-    //if facingIndex % 2 == 0 is North/South
-    if(this.facingIndex % 2 == 0)
-    {
-      console.log(`Y ${(this.facingIndex - 1) * -1}`)
-      //Moving North / South
-      this.y += (this.facingIndex - 1) * -1;
-    }else{
-      //Moving West / East
-      this.x += (this.facingIndex - 2) * -1;
+    if(this.facingIndex == 0){
+      this.y += 1; 
+    }
+    if(this.facingIndex == 1){
+      this.x += 1;
+    }
+    if(this.facingIndex == 2){
+      this.y -= 1;
+    }
+    if(this.facingIndex == 3){
+      this.x -= 1;
     }
   }
 }
