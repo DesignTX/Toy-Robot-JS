@@ -12,5 +12,5 @@ const pacman = new Pacman(1,2,"WEST");
 
 //loops through commands and passes command to pacman object
 commands.forEach(command => {
-  pacman.execute(command);
+  pacman.execute(command.split(/[ ,]+/));
 });
