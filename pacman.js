@@ -13,12 +13,13 @@ class Pacman {
     }
   }
   report(){
-    console.log(`Pacman's coordinates: x = ${this.x}, y = ${this.y}, facing = ${this.directions[this.facingIndex]} `) 
+    console.log(`\nPacman's coordinates: x = ${this.x}, y = ${this.y}, facing = ${this.directions[this.facingIndex]}\n`) 
   }
   place(x,y,facing){
     console.log('Place called')
-    this.x = x;
-    this.y = y;
+    //parseInt converts string into integer
+    this.x = parseInt(x);
+    this.y = parseInt(y);
     this.facingIndex = this.directions.indexOf(facing);
   }
   left(){
@@ -28,6 +29,19 @@ class Pacman {
   right(){
     console.log("right called")
     this.facingIndex == 3 ? this.facingIndex = 0 : this.facingIndex += 1;
+  }
+  move(){
+    console.log(`Move called ... ${this.facingIndex % 2}`)
+    //if facingIndex % 2 == 0 is North/South
+    if(this.facingIndex % 2 == 0)
+    {
+      console.log(`Y ${(this.facingIndex - 1) * -1}`)
+      //Moving North / South
+      this.y += (this.facingIndex - 1) * -1;
+    }else{
+      //Moving West / East
+      this.x += (this.facingIndex - 2) * -1;
+    }
   }
 }
 
