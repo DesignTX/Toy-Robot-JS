@@ -17,6 +17,8 @@ $ git clone https://github.com/DesignTX/ie-coding-challenge.git
 ### Install Required Files
 ```
 $ npm install
+$ npm install mocha
+$ npm install chai
 ```
 ### Run Application
 ```
