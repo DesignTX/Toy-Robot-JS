@@ -1,5 +1,5 @@
 const expect = require("chai").expect;
-const Pacman = require('../pacman');
+const Pacman = require('../lib/pacman');
 
 describe("Pacman Class",() => {
   beforeEach(() => {
