@@ -19,11 +19,11 @@ class WorldController {
 
   //validates pacmans location to not pass the height and width barrier or go beneath 0,0
   validatePacmanLocation(){
-    if (this.pacman.x > this.height){
-      this.pacman.x = this.height;
+    if (this.pacman.x >= this.height){
+      this.pacman.x = this.height -1;
     }
     if (this.pacman.y > this.width){
-      this.pacman.y = this.width;
+      this.pacman.y = this.width -1;
     }
     if (this.pacman.x < 0){
       this.pacman.x = 0;

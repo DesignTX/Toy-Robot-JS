@@ -8,13 +8,13 @@ describe("Pacman Class",() => {
 
   describe("#place()", () => {
     beforeEach(() => {
-      testPacman.place(4,5,'west')
+      testPacman.place(3,4,'west')
     })
     it("It should place Pacman at the current X position", () => {
-      expect(testPacman.x).to.equal(4);
+      expect(testPacman.x).to.equal(3);
     });
     it("It should place Pacman at the current Y position", () => {
-      expect(testPacman.y).to.equal(5);
+      expect(testPacman.y).to.equal(4);
     })
     it("It should face Pacman at the current Facing direction", () => {
       expect(testPacman.facingIndex).to.equal(3);

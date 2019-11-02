@@ -1,22 +1,26 @@
 class Pacman {
   constructor() {
     this.directions = ['north','east','south','west'];
-    // isPlaced set to false so pacman can not move without being placed
+    //isPlaced set to false so pacman can not move without being placed
     this.isPlaced = false;
   }
   execute(command){
     //checking to see if pacman can call the command
     if(this[command[0]]) {
       //calling command on pacman object with optional function arguments
-      // if pacman is placed then take in the remaining commands afterwards
+      //if pacman is placed then take in the remaining commands afterwards
       if(command[0] === 'place' || this.isPlaced){
         this[command[0]].apply(this, command.slice(1,command.length));
       }
     }
   }
+
+  //reports current coordinates of pacman
   report(){
     console.log(`PACMAN'S COORDINATES: X = ${this.x}, Y = ${this.y}, FACING = ${this.directions[this.facingIndex].toUpperCase()}`) 
   }
+
+  //places pacman with a X,Y and Facing direction [N,E,S,W]
   place(x,y,facing){
     //parseInt converts string into integer
     this.x = parseInt(x);
