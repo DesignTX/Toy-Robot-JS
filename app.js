@@ -8,7 +8,7 @@ const instructions = fileData.split('\n');
 //turns all commands into lowercase to match function names
 const commands = instructions.map((instruction) => {return instruction.toLowerCase()});
 
-const pacman = new Pacman(1,2,"WEST");
+const pacman = new Pacman(1,2,"west");
 
 //loops through commands and passes command to pacman object
 commands.forEach(command => {
