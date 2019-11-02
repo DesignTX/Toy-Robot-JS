@@ -139,6 +139,7 @@ REPORT
 ```
 
 #### <a id="commands"></a>Available Commands
+
 * PLACE - move backward 1 unit
 * MOVE - move forward 1 unit in the facing direction
 * RIGHT - turn right 90 degrees
@@ -149,14 +150,14 @@ REPORT
 
 
 ### <a id="extensibility"></a>Extensibility
-With extensibility in mind, the commands, movements and simulation were split into 2 different classes. The split allows extensibility by allowing us to add different inputs types or movement types in the future while also being able to expand the grid size without affecting how the program needed to run.
+With extensibility in mind, the commands and movements were split into 2 different classes. The split allows extensibility by allowing us to add different inputs types or movement types in the future while also being able to expand the grid size without affecting how the program needed to run.
 
 
 #### Pacman Class
 - Stores all movement and turning logic
 - Stores Pacman's placement logic
 
-#### worldController Class
+#### WorldController Class
 - Passes the input commands into the Pacman logic (Where the magic happens)
 - Creates the maps 5x5 grid
 
