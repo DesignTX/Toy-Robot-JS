@@ -1,5 +1,5 @@
 const fs = require('fs');
-const WorldController = require('./worldController')
+const WorldController = require('./lib/worldController')
 
 
 const fileData = fs.readFileSync('./commandList.txt', 'utf8');
