@@ -12,7 +12,7 @@ IE's 'Pacman' Challenge' written in Javascript.
 ## <a id="usage"></a>Usage
 ### Clone Repository
 ```
-$ git clone https://github.com/ie/Code-Challenge-1.git
+$ git clone https://github.com/DesignTX/ie-coding-challenge.git
 ```
 ### Install Required Files
 ```
